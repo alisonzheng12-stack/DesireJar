@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="存錢罐">
@@ -564,6 +564,12 @@
   // render called after login
 
   // ── Firebase ──
+  // 安全保護：若 Firebase 8 秒內未回應，強制顯示登入畫面
+  const _authTimeout = setTimeout(() => {
+    document.getElementById('auth-loading').classList.add('hidden');
+    document.getElementById('login-screen').classList.remove('hidden');
+  }, 8000);
+
   import('https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js').then(({initializeApp}) => {
     const app = initializeApp({
       apiKey: "AIzaSyBqcw84BbcpPOouQiv9q1hBmavO3g8so3E",
@@ -580,6 +586,7 @@
       const auth = getAuth(app);
 
       onAuthStateChanged(auth, user => {
+        clearTimeout(_authTimeout);
         document.getElementById('auth-loading').classList.add('hidden');
         if (user) {
           currentUser = user;
