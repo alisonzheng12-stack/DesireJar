@@ -1,0 +1,27 @@
+{
+  "name": "慾望抵抗存錢罐",
+  "short_name": "存錢罐",
+  "description": "記錄每次抵抗慾望省下的錢，累積存入你的存錢罐",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F7F5F0",
+  "theme_color": "#2B5BE0",
+  "orientation": "portrait",
+  "lang": "zh-Hant",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "productivity"],
+  "screenshots": []
+}
