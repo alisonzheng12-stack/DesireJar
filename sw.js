@@ -1,5 +1,5 @@
 // sw.js — Service Worker for 慾望抵抗存錢罐 PWA
-const CACHE = 'desire-jar-v1';
+const CACHE = 'desire-jar-v2';
 const SHELL = [
   './index.html',
   'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap'
